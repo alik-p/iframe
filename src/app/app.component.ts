@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   sent$: Observable<string> = interval(1000).pipe(
     map(time => {
-      const message = `Message from iframe: ${time}`
+      const message = `Message from iframe v2: ${time}`
       console.warn({parent: this.#parentWindow});
       this.#parentWindow.postMessage(message /*todo: targetOrigin*/);
       return message;
