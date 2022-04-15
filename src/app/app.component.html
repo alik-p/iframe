@@ -1,5 +1,13 @@
 <div class="content" role="main">
-  <h2>Sent: '{{sent$ | async}}'</h2>
+  <input type="text" [formControl]="control">
+  <button type="button" (click)="onSend()" [disabled]="control.invalid">Send</button>
+
+  <ul>
+    <li *ngFor="let message of sent">{{message}}</li>
+  </ul>
+
+
+<!--  <h2>Sent: '{{sent$ | async}}'</h2>-->
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
