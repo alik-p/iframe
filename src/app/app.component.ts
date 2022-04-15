@@ -13,12 +13,13 @@ export class AppComponent implements OnInit {
 
   sent$: Observable<string> = interval(1000).pipe(
     map(time => {
-      const message = `Message from iframe v2: ${time}`
-      console.warn({parent: this.#parentWindow});
-      this.#parentWindow.postMessage(message /*todo: targetOrigin*/);
+      const message = `Message from iframe v0.0.3: ${time}`;
+      this.#parentWindow.postMessage(message, '*' /*todo: targetOrigin*/);
       return message;
     })
   );
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+    console.warn({parent: this.#parentWindow})
+  }
 }
