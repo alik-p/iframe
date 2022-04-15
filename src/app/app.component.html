@@ -4,7 +4,9 @@
   <button type="button" (click)="onSend()" [disabled]="control.invalid">Send</button>
 
   <ul>
-    <li *ngFor="let message of sent">{{message}}</li>
+    <li *ngFor="let message of sent">
+      {{message | json}}
+    </li>
   </ul>
 
 
