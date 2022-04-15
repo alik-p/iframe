@@ -1,5 +1,6 @@
 <div class="content" role="main">
-  <input type="text" [formControl]="control">
+  <label>machineId:</label>
+  <input type="number" [formControl]="control">
   <button type="button" (click)="onSend()" [disabled]="control.invalid">Send</button>
 
   <ul>
